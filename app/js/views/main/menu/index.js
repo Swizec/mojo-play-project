@@ -21,5 +21,15 @@ module.exports = views.Base.extend({
             modelViewClass: EntryView,
             source: entries
         }
+    },
+
+    addEntry: function () {
+        this.event.preventDefault();
+
+        // there is probably a more mojoesque way to do this
+        var $label = $("#add-entry");
+
+        entries.push(new bindable.Object({label: $label.val()}));
+        $label.val("");
     }
 });

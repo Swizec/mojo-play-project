@@ -2,3 +2,11 @@
 <ul>
   {{html: sections.entries}}
 </ul>
+
+<form role="form" data-bind="{{onSubmit: addEntry()}}">
+  <div class="form-group">
+    <label for="add-entry">Add entry</label>
+    <input type="text" class="form-control" id="add-entry" placeholder="Entry title" data-bind="{{model: <~ model.label}}">
+  </div>
+  <button type="submit" class="btn btn-default">Add</button>
+</form>
