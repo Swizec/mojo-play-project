@@ -1,7 +1,10 @@
-<h4>Welcome to Mojo.js, What's your name?</h4>
 
-<input type="text" data-bind="{{ model: <~>name }}"></input>
+<div class="container">
+  <h4>Welcome to Mojo.js, What's your name?</h4>
 
-{{#if:name}}
-  <h4>Welcome {{name}}!!</h4>
-{{/}}
+  <input type="text" data-bind="{{ model: <~>name }}"></input>
+
+  {{#if:name}}
+    <h4>Welcome {{name}}!!</h4>
+  {{/}}
+</div>

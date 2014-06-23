@@ -18,12 +18,12 @@
   "readmeFilename": "README.md",
   "gitHead": "f685d2e601df0d0e91f7a4a07f5c696e67e81bb0",
   "dependencies": {
+    "mkdirp": "^0.5.0",
     "mojo-application": "0.0.x",
-    "mojo-paperclip": "0.4.x",
-    "mojo-views": "0.0.x",
-    "mojo-router": "^0.2.2",
     "mojo-mediator": "0.0.4",
-    "mkdirp": "^0.5.0"
+    "mojo-paperclip": "0.4.x",
+    "mojo-router": "^0.2.2",
+    "mojo-views": "0.0.x"
   },
   "devDependencies": {
     "expect.js": "0.3.1",
