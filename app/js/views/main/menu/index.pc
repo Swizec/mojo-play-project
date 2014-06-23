@@ -1,4 +1,4 @@
 
 <ul>
-  {{html sections.entries}}
+  {{html: sections.entries}}
 </ul>

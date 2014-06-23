@@ -1,4 +1,4 @@
 
 <li>
-  {{label}}
+  <strong><a href="#{{model.href}}">{{model.label}}</a></strong>
 </li>
