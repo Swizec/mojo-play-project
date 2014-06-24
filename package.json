@@ -23,7 +23,8 @@
     "mojo-mediator": "0.0.4",
     "mojo-paperclip": "0.4.x",
     "mojo-router": "^0.2.2",
-    "mojo-views": "0.0.x"
+    "mojo-views": "0.0.x",
+    "mojo-models": "0.0.x"
   },
   "devDependencies": {
     "expect.js": "0.3.1",
