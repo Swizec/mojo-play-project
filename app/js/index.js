@@ -26,13 +26,14 @@ module.exports = Application.extend({
     this.use(require("./routes"));
   },
   didInitialize: function (options) {
-      var entries = new bindable.Collection([
-          new bindable.Object({label: "Menu 1"}),
-          new bindable.Object({label: "Menu 2"})
-      ]);
+      //console.log(this);
+      // var entries = new bindable.Collection([
+      //     new bindable.Object({label: "Menu 1"}),
+      //     new bindable.Object({label: "Menu 2"})
+      // ]);
       
       var mainView = this.views.create("main", {
-          entries: entries
+         entries: require("./models/entries")
       });
 
     $(options.element).append(mainView.render());
