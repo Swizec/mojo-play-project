@@ -24,7 +24,10 @@ module.exports = views.Base.extend({
         // there is probably a more mojoesque way to do this
         var $label = $("#add-entry");
 
-        this.entries.push(new bindable.Object({label: $label.val()}));
+        // this is wrong, should be handled by funky magical data layer
+        this.application.firebase.push({label: $label.val()});
+
+        //this.entries.push(new bindable.Object({label: $label.val()}));
         $label.val("");
     }
 });

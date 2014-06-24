@@ -7,8 +7,7 @@ module.exports = Application.extend({
     // globally accessible functions
     this.use(require("mojo-mediator"));
 
-    // model - TODO
-    // this.use(require("mojo-models"))
+    this.use(require("mojo-models"));
 
     // view controller
     this.use(require("mojo-views"));
@@ -24,16 +23,19 @@ module.exports = Application.extend({
     this.use(require("./views"));
     this.use(require("./templates"));
     this.use(require("./routes"));
+
+      this.firebase = new Firebase('https://my-firebase-name.firebaseIO-demo.com/');; 
   },
   didInitialize: function (options) {
-      //console.log(this);
-      // var entries = new bindable.Collection([
-      //     new bindable.Object({label: "Menu 1"}),
-      //     new bindable.Object({label: "Menu 2"})
-      // ]);
+      var entries = new bindable.Collection();
+
+      // should be handled by magic data layer
+      this.firebase.on("child_added", function (childSnapshot) {
+          entries.push(new bindable.Object(childSnapshot.val()));
+      });
       
       var mainView = this.views.create("main", {
-         entries: require("./models/entries")
+          entries: entries
       });
 
     $(options.element).append(mainView.render());
