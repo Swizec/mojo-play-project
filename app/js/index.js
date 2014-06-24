@@ -26,6 +26,15 @@ module.exports = Application.extend({
     this.use(require("./routes"));
   },
   didInitialize: function (options) {
-    $(options.element).append(this.views.create("main").render());
+      var entries = new bindable.Collection([
+          new bindable.Object({label: "Menu 1"}),
+          new bindable.Object({label: "Menu 2"})
+      ]);
+      
+      var mainView = this.views.create("main", {
+          entries: entries
+      });
+
+    $(options.element).append(mainView.render());
   }
 });

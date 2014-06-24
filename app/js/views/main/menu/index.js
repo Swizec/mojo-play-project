@@ -7,11 +7,6 @@ var EntryView = views.Base.extend({
     paper: require("./entry.pc")
 });
 
-var entries = new bindable.Collection([
-    new bindable.Object({label: "Menu 1"}),
-    new bindable.Object({label: "Menu 2"})
-]);
-
 module.exports = views.Base.extend({
     paper: require("./index.pc"),
 
@@ -19,7 +14,7 @@ module.exports = views.Base.extend({
         entries: {
             type: "list",
             modelViewClass: EntryView,
-            source: entries
+            source: "entries"
         }
     },
 
@@ -29,7 +24,7 @@ module.exports = views.Base.extend({
         // there is probably a more mojoesque way to do this
         var $label = $("#add-entry");
 
-        entries.push(new bindable.Object({label: $label.val()}));
+        this.entries.push(new bindable.Object({label: $label.val()}));
         $label.val("");
     }
 });
